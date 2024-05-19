@@ -1,32 +1,22 @@
-﻿using Netcode;
+using Netcode;
 using StardewValley.Network;
 using StardewValley;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using Lidgren.Network;
+
 namespace MultiplayerMod.Framework.Network
 {
     internal class LidgrenClient : StardewValley.Network.Client
     {
         private string address;
-
         public NetClient client;
-
         private bool serverDiscovered;
-
         private int maxRetryAttempts;
-
         private int retryMs = 10000;
-
         private double lastAttemptMs;
-
         private int retryAttempts;
-
         private float lastLatencyMs;
 
         public LidgrenClient(string address)
